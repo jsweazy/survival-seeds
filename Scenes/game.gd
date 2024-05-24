@@ -5,9 +5,6 @@ const enviorment_layer = 1
 
 const main_tile_source_id = 0
 
-signal is_tilling
-signal is_harvesting(harvest_type: String)
-
 func _process(delta):
 	pass
 
@@ -27,7 +24,7 @@ func _input(event):
 			var harvest_type = env_tile_data.get_custom_data('harvest_type')
 			if can_harvest and harvest_type:
 				harvesting = true
-				is_harvesting.emit(harvest_type)
+				harvest(harvest_type)
 			
 		if ground_tile_data and !harvesting:
 			var can_till = ground_tile_data.get_custom_data('can_till')
@@ -41,5 +38,12 @@ func _input(event):
 			print('no tile data')
 
 func till_tile(ground_layer, tile_mouse_position, main_tile_source_id, dirt_tile_atlas_cord):
-	is_tilling.emit()
+	%Player.set_tilling(true)
 	%TileMap.set_cell(ground_layer, tile_mouse_position, main_tile_source_id, dirt_tile_atlas_cord)
+
+func harvest(harvest_type):
+	match harvest_type:
+		"rock":
+			%Player.set_mining(true)
+		_:
+			print("no matching harvest type: ", harvest_type) 

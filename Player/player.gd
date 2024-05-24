@@ -30,7 +30,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 	
-	move_and_slide()	
+	move_and_slide()
 
 func update_animation():
 	if velocity.length() > 0.0 and !is_tilling and !is_harvesting:
@@ -58,12 +58,3 @@ func set_mining(value = false):
 	%AnimationTree.set("parameters/conditions/is_mining", value)
 	print('set_mining: ', value)
 
-func _on_game_is_tilling():
-	set_tilling(true)
-	
-func _on_game_is_harvesting(harvest_type):
-	match harvest_type:
-		"rock":
-			set_mining(true)
-		_:
-			print("no matching harvest type: ", harvest_type) 

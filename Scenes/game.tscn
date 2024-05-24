@@ -4758,9 +4758,7 @@ layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array(327689, 131072, 24, 589833, 0, 24, 393230, 262144, 24, 589839, 589824, 28, 786444, 655360, 28, 458772, 720896, 28, 720916, 786432, 28)
 
 [node name="Player" parent="." instance=ExtResource("2_pffhe")]
+unique_name_in_owner = true
 position = Vector2(200, 136)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
-[connection signal="is_harvesting" from="." to="Player" method="_on_game_is_harvesting"]
-[connection signal="is_tilling" from="." to="Player" method="_on_game_is_tilling"]
