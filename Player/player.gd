@@ -9,6 +9,7 @@ var shoes_texture = preload("res://art/cozy-assets/clothes/shoes.png")
 var hair_texture = preload("res://art/cozy-assets/hair/gentleman.png")
 
 var is_tilling = false
+var is_harvesting = false
 
 func _ready():
 	%Body.texture = body_texture
@@ -24,7 +25,7 @@ func _process(delta):
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if !is_tilling:
+	if !is_tilling and !is_harvesting:
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
@@ -32,7 +33,7 @@ func _physics_process(delta):
 	move_and_slide()	
 
 func update_animation():
-	if velocity.length() > 0.0 and !is_tilling:
+	if velocity.length() > 0.0 and !is_tilling and !is_harvesting:
 		set_walking(true)
 		update_blend_position(velocity.normalized())
 	else: 
@@ -46,10 +47,23 @@ func update_blend_position(direction):
 	%AnimationTree.set("parameters/till/blend_position", direction)
 	%AnimationTree.set("parameters/idle/blend_position", direction)
 	%AnimationTree.set("parameters/walk/blend_position", direction)
-
-func _on_game_is_tilling():
-	set_tilling(true)
+	%AnimationTree.set("parameters/mine/blend_position", direction)
 
 func set_tilling(value = false):
 	is_tilling = value
 	%AnimationTree.set("parameters/conditions/is_tilling", value)
+	
+func set_mining(value = false):
+	is_harvesting = value
+	%AnimationTree.set("parameters/conditions/is_mining", value)
+	print('set_mining: ', value)
+
+func _on_game_is_tilling():
+	set_tilling(true)
+	
+func _on_game_is_harvesting(harvest_type):
+	match harvest_type:
+		"rock":
+			set_mining(true)
+		_:
+			print("no matching harvest type: ", harvest_type) 
