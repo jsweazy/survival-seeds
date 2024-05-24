@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ceqhyiegcesbo"]
+[gd_scene load_steps=45 format=3 uid="uid://ceqhyiegcesbo"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_31wnp"]
 [ext_resource type="Texture2D" uid="uid://b1ysv23ud6jml" path="res://art/cozy-assets/characters/char1.png" id="1_u7131"]
@@ -71,7 +71,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_jf3c4"]
-resource_name = "idle"
+resource_name = "idle_down"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -328,6 +328,84 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k1pqt"]
+resource_name = "till_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 41), Vector2i(1, 41), Vector2i(2, 41), Vector2i(3, 41), Vector2i(4, 41)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 41), Vector2i(1, 41), Vector2i(2, 41), Vector2i(3, 41), Vector2i(4, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 41), Vector2i(1, 41), Vector2i(2, 41), Vector2i(3, 41), Vector2i(4, 41)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 41), Vector2i(1, 41), Vector2i(2, 41), Vector2i(3, 41), Vector2i(4, 41)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 41), Vector2i(1, 41), Vector2i(2, 41), Vector2i(3, 41), Vector2i(4, 41)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.49),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_tilling"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_pqstb"]
@@ -590,13 +668,251 @@ tracks/4/keys = {
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_3mhga"]
+resource_name = "till_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 42), Vector2i(1, 42), Vector2i(2, 42), Vector2i(3, 42), Vector2i(4, 42)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 42), Vector2i(1, 42), Vector2i(2, 42), Vector2i(3, 42), Vector2i(4, 42)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 42), Vector2i(1, 42), Vector2i(2, 42), Vector2i(3, 42), Vector2i(4, 42)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 42), Vector2i(1, 42), Vector2i(2, 42), Vector2i(3, 42), Vector2i(4, 42)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 42), Vector2i(1, 42), Vector2i(2, 42), Vector2i(3, 42), Vector2i(4, 42)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_tilling"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mu2lx"]
+resource_name = "till_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 43), Vector2i(1, 43), Vector2i(2, 43), Vector2i(3, 43), Vector2i(4, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 43), Vector2i(1, 43), Vector2i(2, 43), Vector2i(3, 43), Vector2i(4, 43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 43), Vector2i(1, 43), Vector2i(2, 43), Vector2i(3, 43), Vector2i(4, 43)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 43), Vector2i(1, 43), Vector2i(2, 43), Vector2i(3, 43), Vector2i(4, 43)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 43), Vector2i(1, 43), Vector2i(2, 43), Vector2i(3, 43), Vector2i(4, 43)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_tilling"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1d1j6"]
+resource_name = "till_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 44), Vector2i(1, 44), Vector2i(2, 44), Vector2i(3, 44), Vector2i(4, 44)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 44), Vector2i(1, 44), Vector2i(2, 44), Vector2i(3, 44), Vector2i(4, 44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 44), Vector2i(1, 44), Vector2i(2, 44), Vector2i(3, 44), Vector2i(4, 44)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 44), Vector2i(1, 44), Vector2i(2, 44), Vector2i(3, 44), Vector2i(4, 44)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 44), Vector2i(1, 44), Vector2i(2, 44), Vector2i(3, 44), Vector2i(4, 44)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_tilling"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8q8b4"]
 _data = {
 "RESET": SubResource("Animation_qcjgw"),
-"idle": SubResource("Animation_jf3c4"),
+"idle_down": SubResource("Animation_jf3c4"),
 "idle_left": SubResource("Animation_hs3ef"),
 "idle_right": SubResource("Animation_dexpm"),
 "idle_up": SubResource("Animation_8umdq"),
+"till_down": SubResource("Animation_k1pqt"),
+"till_left": SubResource("Animation_1d1j6"),
+"till_right": SubResource("Animation_mu2lx"),
+"till_up": SubResource("Animation_3mhga"),
 "walk_down": SubResource("Animation_pqstb"),
 "walk_left": SubResource("Animation_yjqhy"),
 "walk_right": SubResource("Animation_q24em"),
@@ -624,6 +940,31 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_4mpq0")
 blend_point_2/pos = Vector2(0, 1.1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_ckpqy")
 blend_point_3/pos = Vector2(0, -1.1)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b0l7h"]
+animation = &"till_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nbvps"]
+animation = &"till_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4r7j8"]
+animation = &"till_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_og0ph"]
+animation = &"till_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hdpau"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_b0l7h")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_nbvps")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_4r7j8")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_og0ph")
+blend_point_3/pos = Vector2(0, 1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
@@ -664,15 +1005,35 @@ advance_condition = &"is_walking"
 advance_mode = 2
 advance_condition = &"idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1dk4m"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_15sl7"]
+advance_mode = 2
+advance_condition = &"is_tilling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tfw2h"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tna3l"]
+advance_mode = 2
+advance_condition = &"is_tilling"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_28qna"]
 states/End/position = Vector2(1071, 97.5)
 states/Start/position = Vector2(94, 83.1094)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_kq3c4")
 states/idle/position = Vector2(243.5, 85.5547)
+states/till/node = SubResource("AnimationNodeBlendSpace2D_hdpau")
+states/till/position = Vector2(329.51, -58.335)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_5rbys")
 states/walk/position = Vector2(412, 83.4707)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_csiaq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_prbrr"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bcrqb")]
-graph_offset = Vector2(-549, -69.795)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_csiaq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_prbrr"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bcrqb"), "till", "idle", SubResource("AnimationNodeStateMachineTransition_1dk4m"), "idle", "till", SubResource("AnimationNodeStateMachineTransition_15sl7"), "till", "walk", SubResource("AnimationNodeStateMachineTransition_tfw2h"), "walk", "till", SubResource("AnimationNodeStateMachineTransition_tna3l")]
+graph_offset = Vector2(-204.48, -101.835)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pliij"]
 radius = 3.5
@@ -725,13 +1086,16 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true
+active = false
 root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_28qna")
 advance_expression_base_node = NodePath("../AnimationPlayer")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
+parameters/conditions/is_tilling = false
 parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(-0.00102669, -0.00162482)
+parameters/till/blend_position = Vector2(-0.216918, 0.711227)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
