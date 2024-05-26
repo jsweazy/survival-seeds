@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 3000.0
+const SPEED = 80.0
 
 var body_texture = preload("res://art/cozy-assets/characters/char1.png")
 var shirt_texture = preload("res://art/cozy-assets/clothes/basic.png")
@@ -8,25 +8,32 @@ var pants_texture = preload("res://art/cozy-assets/clothes/pants.png")
 var shoes_texture = preload("res://art/cozy-assets/clothes/shoes.png")
 var hair_texture = preload("res://art/cozy-assets/hair/gentleman.png")
 
+@onready var body = %Body
+@onready var shirt = %Shirt
+@onready var pants = %Pants
+@onready var shoes = %Shoes
+@onready var hair = %Hair
+@onready var animation_tree = %AnimationTree
+
 var is_tilling = false
 var is_harvesting = false
 
 func _ready():
-	%Body.texture = body_texture
-	%Shirt.texture = shirt_texture
-	%Pants.texture = pants_texture
-	%Shoes.texture = shoes_texture
-	%Hair.texture = hair_texture
-	%AnimationTree.active = true
+	body = body_texture
+	shirt = shirt_texture
+	pants = pants_texture
+	shoes = shoes_texture
+	hair = hair_texture
+	animation_tree.active = true
 	
-func _process(delta):
+func _process(_delta):
 	update_animation()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if !is_tilling and !is_harvesting:
-		velocity = direction * SPEED * delta
+		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
 	
@@ -40,21 +47,19 @@ func update_animation():
 		set_walking(false)
 		
 func set_walking(value):
-	%AnimationTree.set("parameters/conditions/is_walking", value)
-	%AnimationTree.set("parameters/conditions/idle", not value)
+	animation_tree.set("parameters/conditions/is_walking", value)
+	animation_tree.set("parameters/conditions/idle", not value)
 	
 func update_blend_position(direction):
-	%AnimationTree.set("parameters/till/blend_position", direction)
-	%AnimationTree.set("parameters/idle/blend_position", direction)
-	%AnimationTree.set("parameters/walk/blend_position", direction)
-	%AnimationTree.set("parameters/mine/blend_position", direction)
+	animation_tree.set("parameters/till/blend_position", direction)
+	animation_tree.set("parameters/idle/blend_position", direction)
+	animation_tree.set("parameters/walk/blend_position", direction)
+	animation_tree.set("parameters/mine/blend_position", direction)
 
 func set_tilling(value = false):
 	is_tilling = value
-	%AnimationTree.set("parameters/conditions/is_tilling", value)
+	animation_tree.set("parameters/conditions/is_tilling", value)
 	
 func set_mining(value = false):
 	is_harvesting = value
-	%AnimationTree.set("parameters/conditions/is_mining", value)
-	print('set_mining: ', value)
-
+	animation_tree.set("parameters/conditions/is_mining", value)
