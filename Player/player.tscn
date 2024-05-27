@@ -1396,19 +1396,18 @@ states/walk/position = Vector2(412, 83.4707)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_csiaq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_prbrr"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bcrqb"), "till", "idle", SubResource("AnimationNodeStateMachineTransition_1dk4m"), "idle", "till", SubResource("AnimationNodeStateMachineTransition_15sl7"), "till", "walk", SubResource("AnimationNodeStateMachineTransition_tfw2h"), "walk", "till", SubResource("AnimationNodeStateMachineTransition_tna3l"), "idle", "mine", SubResource("AnimationNodeStateMachineTransition_5e50j"), "mine", "idle", SubResource("AnimationNodeStateMachineTransition_7ex2q"), "mine", "walk", SubResource("AnimationNodeStateMachineTransition_hh86n"), "walk", "mine", SubResource("AnimationNodeStateMachineTransition_kq76y")]
 graph_offset = Vector2(-25.5188, -57.0805)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pliij"]
-radius = 3.5
-height = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy8x8"]
+size = Vector2(8, 4)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-position = Vector2(95, 80)
+position = Vector2(0, 8)
 script = ExtResource("1_31wnp")
 metadata/_edit_group_ = true
 
 [node name="Body" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -14)
+position = Vector2(0, -8)
 texture = ExtResource("1_u7131")
 hframes = 8
 vframes = 49
@@ -1462,6 +1461,5 @@ parameters/till/blend_position = Vector2(-0.216918, 0.711227)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.5, -0.5)
-shape = SubResource("CapsuleShape2D_pliij")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_yy8x8")

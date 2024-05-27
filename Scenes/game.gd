@@ -5,17 +5,35 @@ const enviorment_layer = 1
 
 const main_tile_source_id = 0
 
-func _process(delta):
-	pass
+@onready var player = %Player
+@onready var tile_map = %TileMap
+
+var grid_helpers : Array[GridHelper] = []
+	
+func _ready():
+	var grid_helper = preload("res://Scenes/grid_helper.tscn")
+	for helper_key in GridHelper.GridHelperPosition.values():
+		var helper = grid_helper.instantiate()
+		helper.set_helper_position_type(helper_key)
+		grid_helpers.append(helper)
+		add_child(helper)
+	
+func _physics_process(delta):
+	var player_pos = player.global_position
+	var tile_player_pos = tile_map.local_to_map(player_pos)
+	var pos: Vector2i = tile_player_pos * 16
+	
+	for grid_helper in grid_helpers:
+		grid_helper.update_position(pos)
 
 func _input(event):
 	if Input.is_action_just_pressed("harvest"):
 		var mouse_position = get_global_mouse_position()
-		var tile_mouse_position = %TileMap.local_to_map(mouse_position)
+		var tile_mouse_position = tile_map.local_to_map(mouse_position)
 		var dirt_tile_atlas_cord = Vector2i(6, 9)
 		
-		var ground_tile_data : TileData = %TileMap.get_cell_tile_data(ground_layer, tile_mouse_position)
-		var env_tile_data: TileData = %TileMap.get_cell_tile_data(enviorment_layer, tile_mouse_position)
+		var ground_tile_data : TileData = tile_map.get_cell_tile_data(ground_layer, tile_mouse_position)
+		var env_tile_data: TileData = tile_map.get_cell_tile_data(enviorment_layer, tile_mouse_position)
 		
 		var harvesting = false
 		
@@ -39,7 +57,7 @@ func _input(event):
 
 func till_tile(ground_layer, tile_mouse_position, main_tile_source_id, dirt_tile_atlas_cord):
 	%Player.set_tilling(true)
-	%TileMap.set_cell(ground_layer, tile_mouse_position, main_tile_source_id, dirt_tile_atlas_cord)
+	tile_map.set_cell(ground_layer, tile_mouse_position, main_tile_source_id, dirt_tile_atlas_cord)
 
 func harvest(harvest_type):
 	match harvest_type:

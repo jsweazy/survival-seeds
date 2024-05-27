@@ -30,7 +30,7 @@ func _process(_delta):
 	update_animation()
 
 func _physics_process(_delta):
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 	
 	if !is_tilling and !is_harvesting:
 		velocity = direction * SPEED
@@ -42,7 +42,7 @@ func _physics_process(_delta):
 func update_animation():
 	if velocity.length() > 0.0 and !is_tilling and !is_harvesting:
 		set_walking(true)
-		update_blend_position(velocity.normalized())
+		update_blend_position(velocity)
 	else: 
 		set_walking(false)
 		
