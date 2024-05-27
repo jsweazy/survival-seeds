@@ -43,7 +43,7 @@ func _ready():
 	hover_style.corner_radius_bottom_left = 0
 	
 	panel.add_theme_stylebox_override('panel', empty_style)
-	pass
+	panel.hide()	
 
 func _on_panel_mouse_entered():
 	if helper_key_down:
@@ -83,8 +83,10 @@ func set_helper_position_type(grid_helper_position: GridHelperPosition):
 
 func _process(delta):
 	if Input.is_action_just_pressed("grid_helper"):
+		panel.show()
 		helper_key_down = true
 	
 	if Input.is_action_just_released("grid_helper"):
+		panel.hide()
 		helper_key_down = false
 		_on_panel_mouse_exited()
