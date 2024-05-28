@@ -10,9 +10,9 @@ z_index = -1
 collision_layer = 0
 collision_mask = 15
 script = ExtResource("1_ofsfp")
-border_color = Color(100, 0, 0, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_3hun8")
 
@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_3hun8")
 unique_name_in_owner = true
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_filter = 1
 
 [connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
