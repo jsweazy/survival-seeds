@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://ceqhyiegcesbo"]
+[gd_scene load_steps=72 format=3 uid="uid://ceqhyiegcesbo"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_31wnp"]
 [ext_resource type="Texture2D" uid="uid://b1ysv23ud6jml" path="res://art/cozy-assets/characters/char1.png" id="1_u7131"]
@@ -68,6 +68,318 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xa6jg"]
+resource_name = "chop_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 33), Vector2i(1, 33), Vector2i(2, 33), Vector2i(3, 33), Vector2i(4, 33)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.200484, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 33), Vector2i(1, 33), Vector2i(2, 33), Vector2i(3, 33), Vector2i(4, 33)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 33), Vector2i(1, 33), Vector2i(2, 33), Vector2i(3, 33), Vector2i(4, 33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 33), Vector2i(1, 33), Vector2i(2, 33), Vector2i(3, 33), Vector2i(4, 33)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 33), Vector2i(1, 33), Vector2i(2, 33), Vector2i(3, 33), Vector2i(4, 33)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_chopping"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4lxey"]
+resource_name = "chop_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 36), Vector2i(1, 36), Vector2i(2, 36), Vector2i(3, 36), Vector2i(4, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.200484, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 36), Vector2i(1, 36), Vector2i(2, 36), Vector2i(3, 36), Vector2i(4, 36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 36), Vector2i(1, 36), Vector2i(2, 36), Vector2i(3, 36), Vector2i(4, 36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 36), Vector2i(1, 36), Vector2i(2, 36), Vector2i(3, 36), Vector2i(4, 36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 36), Vector2i(1, 36), Vector2i(2, 36), Vector2i(3, 36), Vector2i(4, 36)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_chopping"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0sm4d"]
+resource_name = "chop_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 35), Vector2i(1, 35), Vector2i(2, 35), Vector2i(3, 35), Vector2i(4, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.200484, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 35), Vector2i(1, 35), Vector2i(2, 35), Vector2i(3, 35), Vector2i(4, 35)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 35), Vector2i(1, 35), Vector2i(2, 35), Vector2i(3, 35), Vector2i(4, 35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 35), Vector2i(1, 35), Vector2i(2, 35), Vector2i(3, 35), Vector2i(4, 35)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 35), Vector2i(1, 35), Vector2i(2, 35), Vector2i(3, 35), Vector2i(4, 35)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_chopping"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_73e7u"]
+resource_name = "chop_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 34), Vector2i(1, 34), Vector2i(2, 34), Vector2i(3, 34), Vector2i(4, 34)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Shirt:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.200484, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 34), Vector2i(1, 34), Vector2i(2, 34), Vector2i(3, 34), Vector2i(4, 34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 34), Vector2i(1, 34), Vector2i(2, 34), Vector2i(3, 34), Vector2i(4, 34)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Shoes:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 34), Vector2i(1, 34), Vector2i(2, 34), Vector2i(3, 34), Vector2i(4, 34)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hair:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 34), Vector2i(1, 34), Vector2i(2, 34), Vector2i(3, 34), Vector2i(4, 34)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_chopping"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_jf3c4"]
@@ -1217,6 +1529,10 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8q8b4"]
 _data = {
 "RESET": SubResource("Animation_qcjgw"),
+"chop_down": SubResource("Animation_xa6jg"),
+"chop_left": SubResource("Animation_4lxey"),
+"chop_right": SubResource("Animation_0sm4d"),
+"chop_up": SubResource("Animation_73e7u"),
 "idle_down": SubResource("Animation_jf3c4"),
 "idle_left": SubResource("Animation_hs3ef"),
 "idle_right": SubResource("Animation_dexpm"),
@@ -1234,6 +1550,31 @@ _data = {
 "walk_right": SubResource("Animation_q24em"),
 "walk_up": SubResource("Animation_plqdf")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1u320"]
+animation = &"chop_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lmoc0"]
+animation = &"chop_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ctxdy"]
+animation = &"chop_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6gi12"]
+animation = &"chop_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_knyke"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1u320")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_lmoc0")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ctxdy")
+blend_point_2/pos = Vector2(0, 1.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_6gi12")
+blend_point_3/pos = Vector2(0, -1.1)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w73jl"]
 animation = &"idle_left"
@@ -1382,19 +1723,39 @@ advance_condition = &"is_walking"
 advance_mode = 2
 advance_condition = &"is_mining"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_84vok"]
+advance_mode = 2
+advance_condition = &"is_chopping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y0k4v"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sksnk"]
+advance_mode = 2
+advance_condition = &"is_chopping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onj0k"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_walking"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_28qna"]
 states/End/position = Vector2(1071, 97.5)
 states/Start/position = Vector2(94, 83.1094)
+states/chop/node = SubResource("AnimationNodeBlendSpace2D_knyke")
+states/chop/position = Vector2(558.241, 316.495)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_kq3c4")
 states/idle/position = Vector2(239.5, 82.9497)
 states/mine/node = SubResource("AnimationNodeBlendSpace2D_ag7w4")
-states/mine/position = Vector2(322.36, 205.14)
+states/mine/position = Vector2(11.0025, 315.21)
 states/till/node = SubResource("AnimationNodeBlendSpace2D_hdpau")
-states/till/position = Vector2(329.51, -58.335)
+states/till/position = Vector2(237.505, -67.835)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_5rbys")
 states/walk/position = Vector2(412, 83.4707)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_csiaq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_prbrr"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bcrqb"), "till", "idle", SubResource("AnimationNodeStateMachineTransition_1dk4m"), "idle", "till", SubResource("AnimationNodeStateMachineTransition_15sl7"), "till", "walk", SubResource("AnimationNodeStateMachineTransition_tfw2h"), "walk", "till", SubResource("AnimationNodeStateMachineTransition_tna3l"), "idle", "mine", SubResource("AnimationNodeStateMachineTransition_5e50j"), "mine", "idle", SubResource("AnimationNodeStateMachineTransition_7ex2q"), "mine", "walk", SubResource("AnimationNodeStateMachineTransition_hh86n"), "walk", "mine", SubResource("AnimationNodeStateMachineTransition_kq76y")]
-graph_offset = Vector2(-25.5188, -57.0805)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_csiaq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_prbrr"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bcrqb"), "till", "idle", SubResource("AnimationNodeStateMachineTransition_1dk4m"), "idle", "till", SubResource("AnimationNodeStateMachineTransition_15sl7"), "till", "walk", SubResource("AnimationNodeStateMachineTransition_tfw2h"), "walk", "till", SubResource("AnimationNodeStateMachineTransition_tna3l"), "idle", "mine", SubResource("AnimationNodeStateMachineTransition_5e50j"), "mine", "idle", SubResource("AnimationNodeStateMachineTransition_7ex2q"), "mine", "walk", SubResource("AnimationNodeStateMachineTransition_hh86n"), "walk", "mine", SubResource("AnimationNodeStateMachineTransition_kq76y"), "idle", "chop", SubResource("AnimationNodeStateMachineTransition_84vok"), "chop", "idle", SubResource("AnimationNodeStateMachineTransition_y0k4v"), "walk", "chop", SubResource("AnimationNodeStateMachineTransition_sksnk"), "chop", "walk", SubResource("AnimationNodeStateMachineTransition_onj0k")]
+graph_offset = Vector2(27.9638, 232.225)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy8x8"]
 size = Vector2(8, 4)
@@ -1454,9 +1815,11 @@ tree_root = SubResource("AnimationNodeStateMachine_28qna")
 advance_expression_base_node = NodePath("../AnimationPlayer")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
+parameters/conditions/is_chopping = false
 parameters/conditions/is_mining = false
 parameters/conditions/is_tilling = false
 parameters/conditions/is_walking = false
+parameters/chop/blend_position = Vector2(0, 0)
 parameters/idle/blend_position = Vector2(-0.00102669, -0.00162482)
 parameters/mine/blend_position = Vector2(0.000837564, -1.06021)
 parameters/till/blend_position = Vector2(-0.216918, 0.711227)

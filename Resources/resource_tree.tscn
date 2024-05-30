@@ -1,30 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd8mrn8o31f3y"]
+[gd_scene load_steps=11 format=3 uid="uid://bd8mrn8o31f3y"]
 
 [ext_resource type="Texture2D" uid="uid://isusj6ya1yr3" path="res://art/cozy-assets/tiles/tree_shake.png" id="1_25nxd"]
-[ext_resource type="Script" path="res://Scenes/HarvestArea.gd" id="2_ncdkj"]
+[ext_resource type="Script" path="res://Resources/resource_type.gd" id="1_jrkob"]
+[ext_resource type="Script" path="res://Resources/HarvestArea.gd" id="3_ywtfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qjgy"]
+atlas = ExtResource("1_25nxd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoe4v"]
+atlas = ExtResource("1_25nxd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ucs"]
+atlas = ExtResource("1_25nxd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls65f"]
+atlas = ExtResource("1_25nxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgji4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qjgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoe4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ucs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls65f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjj73"]
-size = Vector2(13, 4)
+size = Vector2(16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mebfy"]
 size = Vector2(16, 32)
 
 [node name="ResourceTree" type="StaticBody2D"]
+script = ExtResource("1_jrkob")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
-texture = ExtResource("1_25nxd")
-hframes = 4
-vframes = 8
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_vgji4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 22)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_pjj73")
 
 [node name="HarvestArea" type="Area2D" parent="."]
 collision_layer = 557056
-script = ExtResource("2_ncdkj")
+script = ExtResource("3_ywtfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HarvestArea"]
-position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_mebfy")

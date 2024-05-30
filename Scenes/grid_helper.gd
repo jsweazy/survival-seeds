@@ -52,8 +52,8 @@ func _on_panel_mouse_entered():
 func _on_panel_mouse_exited():
 	panel.add_theme_stylebox_override('panel', empty_style)
 
-func update_position(position: Vector2i) -> void:
-	var helper_pos = Vector2i(position)
+func update_position(pos: Vector2i) -> void:
+	var helper_pos = Vector2i(pos)
 	match _grid_helper_position:
 		GridHelperPosition.TOP:
 			helper_pos.y -= 16
@@ -81,7 +81,7 @@ func update_position(position: Vector2i) -> void:
 func set_helper_position_type(grid_helper_position: GridHelperPosition):
 	_grid_helper_position = grid_helper_position
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("grid_helper"):
 		panel.show()
 		helper_key_down = true

@@ -87,6 +87,7 @@ func update_blend_position(dir):
 	animation_tree.set("parameters/idle/blend_position", dir)
 	animation_tree.set("parameters/walk/blend_position", dir)
 	animation_tree.set("parameters/mine/blend_position", dir)
+	animation_tree.set("parameters/chop/blend_position", dir)
 
 func set_tilling(value = false, pos: Vector2 = Vector2.ZERO):
 	is_tilling = value
@@ -95,12 +96,24 @@ func set_tilling(value = false, pos: Vector2 = Vector2.ZERO):
 	if (pos != Vector2.ZERO):
 		update_blend_position(global_position.direction_to(pos))
 	
-func set_mining(value = false, pos: Vector2 = Vector2.ZERO):
+func set_mining(value = false):
 	is_harvesting = value
 	animation_tree.set("parameters/conditions/is_mining", value)
-	
-	if (pos != Vector2.ZERO):
-		update_blend_position(global_position.direction_to(pos))
+
+func set_chopping(value = false):
+	is_harvesting = value
+	animation_tree.set("parameters/conditions/is_chopping", value)
+
+func set_harvesting(harvestable: StaticBody2D):
+	match(harvestable.type):
+		'choppable':
+			set_chopping(true)
+		'mineable':
+			set_mining(true)
+
+	update_blend_position(global_position.direction_to(harvestable.global_position))
+	if (harvestable.has_method('harvest')):
+		harvestable.harvest()
 
 func _input(_event):
 	if Input.is_action_just_pressed("harvest"):
@@ -123,8 +136,7 @@ func harvest():
 	
 	for intersection in intersections:
 		if (intersection.collider is HarvestArea):
-			# TODO: harvest bases on type
-			set_mining(true, intersection.collider.get_parent().global_position)
+			set_harvesting(intersection.collider.get_parent())
 			return
 	
 	var tile_mouse_position = tile_map.local_to_map(mouse_position)

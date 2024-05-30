@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfujlehjh4fdl"]
+
+[ext_resource type="Script" path="res://Resources/resource_type.gd" id="1_icmxk"]
+[ext_resource type="Texture2D" uid="uid://bbilf46u2brk4" path="res://art/cozy-assets/tiles/rock.png" id="2_75d5y"]
+[ext_resource type="Script" path="res://Resources/HarvestArea.gd" id="3_0c5jk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mn5f"]
+atlas = ExtResource("2_75d5y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huyri"]
+atlas = ExtResource("2_75d5y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgji4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mn5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huyri")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjj73"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mebfy"]
+size = Vector2(16, 16)
+
+[node name="ResourceRock" type="StaticBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_icmxk")
+type = "mineable"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2.08165e-12, 2.08165e-12)
+sprite_frames = SubResource("SpriteFrames_vgji4")
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_pjj73")
+
+[node name="HarvestArea" type="Area2D" parent="."]
+collision_layer = 557056
+script = ExtResource("3_0c5jk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HarvestArea"]
+shape = SubResource("RectangleShape2D_mebfy")
