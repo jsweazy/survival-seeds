@@ -1764,9 +1764,8 @@ size = Vector2(8, 4)
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
-position = Vector2(0, 8)
 script = ExtResource("1_31wnp")
+metadata/_edit_group_ = true
 
 [node name="Body" type="Sprite2D" parent="."]
 unique_name_in_owner = true
