@@ -41,6 +41,6 @@ func _on_animated_sprite_2d_animation_finished():
 	
 func spawn_resources():
 	for n in randi_range(min_resources, max_resources):
-		var resource = dropped_item.instantiate()
+		var resource = dropped_item.instantiate() as PickupItem
 		parent_level.add_child(resource)
 		resource.position = position;
