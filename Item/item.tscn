@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://crh84ehvvkysp"]
+
+[ext_resource type="Texture2D" uid="uid://ox8uxhrvj3es" path="res://art/cozy-assets/ui/items.png" id="1_tu52q"]
+
+[node name="Item" type="Sprite2D"]
+texture = ExtResource("1_tu52q")
+hframes = 10
+vframes = 12

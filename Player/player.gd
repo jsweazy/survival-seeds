@@ -106,9 +106,9 @@ func set_chopping(value = false):
 
 func set_harvesting(harvestable: StaticBody2D):
 	match(harvestable.type):
-		'choppable':
+		ResourceNode.RESOURCE_TYPE.CHOPPABLE:
 			set_chopping(true)
-		'mineable':
+		ResourceNode.RESOURCE_TYPE.MINEABLE:
 			set_mining(true)
 
 	update_blend_position(global_position.direction_to(harvestable.global_position))
@@ -133,7 +133,7 @@ func harvest():
 	query.position = mouse_position
 	query.collide_with_areas = true
 	var intersections = get_world_2d().direct_space_state.intersect_point(query)
-	
+
 	for intersection in intersections:
 		if (intersection.collider is HarvestArea):
 			set_harvesting(intersection.collider.get_parent())

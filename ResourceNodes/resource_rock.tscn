@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgasrvknknsxn"]
+
+[ext_resource type="Script" path="res://ResourceNodes/resource_node.gd" id="1_xxum7"]
+[ext_resource type="Texture2D" uid="uid://bbilf46u2brk4" path="res://art/cozy-assets/tiles/rock.png" id="2_er2fa"]
+[ext_resource type="PackedScene" uid="uid://c4wfhy4p601ak" path="res://Item/PickupItem/rock.tscn" id="2_kt6k6"]
+[ext_resource type="Script" path="res://ResourceNodes/harvest_area.gd" id="3_h4igu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ply"]
+atlas = ExtResource("2_er2fa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oacv"]
+atlas = ExtResource("2_er2fa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbgc"]
+atlas = ExtResource("2_er2fa")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq8bo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oacv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glbgc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spuv3"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on71f"]
+size = Vector2(16, 16)
+
+[node name="ResourceRock" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_2d")]
+script = ExtResource("1_xxum7")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+type = 1
+health = 4
+dropped_item = ExtResource("2_kt6k6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vq8bo")
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_spuv3")
+
+[node name="HarvestArea" type="Area2D" parent="."]
+script = ExtResource("3_h4igu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HarvestArea"]
+shape = SubResource("RectangleShape2D_on71f")

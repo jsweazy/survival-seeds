@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://df2s2k5qmmpr2"]
+
+[ext_resource type="Script" path="res://Item/PickupItem/pickup_item.gd" id="1_76iyd"]
+[ext_resource type="PackedScene" uid="uid://crh84ehvvkysp" path="res://Item/item.tscn" id="2_nedlg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5o8k"]
+radius = 9.21954
+
+[node name="PickupItem" type="StaticBody2D"]
+z_index = -1
+collision_layer = 0
+script = ExtResource("1_76iyd")
+
+[node name="Item" parent="." instance=ExtResource("2_nedlg")]
+frame = 70
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e5o8k")

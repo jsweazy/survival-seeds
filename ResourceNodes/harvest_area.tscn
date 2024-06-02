@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ogl8l17sfpl"]
+
+[ext_resource type="Script" path="res://ResourceNodes/harvest_area.gd" id="1_vgttv"]
+
+[node name="HarvestArea" type="Area2D"]
+script = ExtResource("1_vgttv")

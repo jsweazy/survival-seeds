@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://7lq0qd2j37gm" path="res://art/cozy-assets/tiles/tiles.png" id="1_554t1"]
 [ext_resource type="PackedScene" uid="uid://ceqhyiegcesbo" path="res://Player/player.tscn" id="2_pffhe"]
 [ext_resource type="Script" path="res://Scenes/TileMap.gd" id="2_ypspw"]
-[ext_resource type="PackedScene" uid="uid://bd8mrn8o31f3y" path="res://Resources/resource_tree.tscn" id="4_ilgah"]
-[ext_resource type="PackedScene" uid="uid://cfujlehjh4fdl" path="res://Resources/resource_rock.tscn" id="5_rbx6f"]
+[ext_resource type="PackedScene" uid="uid://p3tmsxe6vdyi" path="res://ResourceNodes/resource_tree.tscn" id="4_jf7vs"]
+[ext_resource type="PackedScene" uid="uid://dgasrvknknsxn" path="res://ResourceNodes/resource_rock.tscn" id="5_xrkv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rfbj"]
 texture = ExtResource("1_554t1")
@@ -4633,8 +4633,14 @@ position = Vector2(200, 136)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="ResourceTree" parent="." instance=ExtResource("4_ilgah")]
-position = Vector2(136, 96)
+[node name="ResourceTree" parent="." instance=ExtResource("4_jf7vs")]
+position = Vector2(144, 112)
 
-[node name="ResourceRock" parent="." instance=ExtResource("5_rbx6f")]
-position = Vector2(232, 88)
+[node name="ResourceRock" parent="." instance=ExtResource("5_xrkv3")]
+position = Vector2(248, 104)
+
+[node name="ResourceRock2" parent="." instance=ExtResource("5_xrkv3")]
+position = Vector2(136, 168)
+
+[node name="ResourceTree2" parent="." instance=ExtResource("4_jf7vs")]
+position = Vector2(288, 152)

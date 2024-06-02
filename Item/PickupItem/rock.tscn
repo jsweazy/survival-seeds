@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4wfhy4p601ak"]
+
+[ext_resource type="Script" path="res://Item/PickupItem/pickup_item.gd" id="1_5prx1"]
+[ext_resource type="PackedScene" uid="uid://crh84ehvvkysp" path="res://Item/item.tscn" id="2_wuopp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_it8qw"]
+
+[node name="Rock" type="StaticBody2D"]
+collision_layer = 0
+script = ExtResource("1_5prx1")
+
+[node name="Item" parent="." instance=ExtResource("2_wuopp")]
+frame = 71
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_it8qw")

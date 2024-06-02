@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://p3tmsxe6vdyi"]
+
+[ext_resource type="Script" path="res://ResourceNodes/resource_node.gd" id="1_klx1f"]
+[ext_resource type="PackedScene" uid="uid://qjij3qnk0xek" path="res://ResourceNodes/resource_tree_sprite.tscn" id="2_1ghnx"]
+[ext_resource type="PackedScene" uid="uid://df2s2k5qmmpr2" path="res://Item/PickupItem/wood.tscn" id="2_nq60v"]
+[ext_resource type="Script" path="res://ResourceNodes/harvest_area.gd" id="3_v687p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sst08"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j3bd"]
+size = Vector2(16, 32)
+
+[node name="ResourceTree" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_2d")]
+script = ExtResource("1_klx1f")
+animated_sprite_2d = NodePath("ResourceTreeSprite")
+dropped_item = ExtResource("2_nq60v")
+
+[node name="ResourceTreeSprite" parent="." instance=ExtResource("2_1ghnx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_sst08")
+
+[node name="HarvestArea" type="Area2D" parent="."]
+script = ExtResource("3_v687p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HarvestArea"]
+shape = SubResource("RectangleShape2D_7j3bd")

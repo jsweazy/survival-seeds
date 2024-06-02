@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://qjij3qnk0xek"]
+
+[ext_resource type="Texture2D" uid="uid://isusj6ya1yr3" path="res://art/cozy-assets/tiles/tree_shake.png" id="1_bctmk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6blq"]
+atlas = ExtResource("1_bctmk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij3p6"]
+atlas = ExtResource("1_bctmk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djq08"]
+atlas = ExtResource("1_bctmk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_venvf"]
+atlas = ExtResource("1_bctmk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjdji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6blq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij3p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djq08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_venvf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ResourceTreeSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bjdji")
