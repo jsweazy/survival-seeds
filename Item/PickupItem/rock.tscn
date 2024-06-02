@@ -4,12 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://crh84ehvvkysp" path="res://Item/item.tscn" id="2_wuopp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_it8qw"]
+radius = 8.0
 
 [node name="Rock" type="StaticBody2D"]
+z_index = -1
 collision_layer = 0
 script = ExtResource("1_5prx1")
 
 [node name="Item" parent="." instance=ExtResource("2_wuopp")]
+scale = Vector2(0.6, 0.6)
 frame = 71
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
